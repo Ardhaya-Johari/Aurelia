@@ -2,41 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Aurelia Tropical Travel Platform Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ocean Blues */
+    --ocean-blue: 200 100% 45%;
+    --ocean-blue-light: 200 100% 65%;
+    --ocean-blue-dark: 200 100% 25%;
+    
+    /* Sunset Oranges */
+    --sunset-orange: 25 95% 53%;
+    --sunset-orange-light: 25 95% 73%;
+    --sunset-orange-dark: 25 95% 33%;
+    
+    /* Sand Beiges */
+    --sand-beige: 45 30% 90%;
+    --sand-beige-light: 45 30% 95%;
+    --sand-beige-dark: 45 30% 80%;
+    
+    /* Core System Colors */
+    --background: 220 20% 98%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 100% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 30% 90%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 90%;
+    --input: 220 20% 95%;
+    --ring: 200 100% 45%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+    
+    /* Tropical Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-blue)), hsl(var(--ocean-blue-light)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset-orange)), hsl(var(--sunset-orange-light)));
+    --gradient-tropical: linear-gradient(135deg, hsl(var(--ocean-blue)), hsl(var(--sunset-orange)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ocean-blue) / 0.9), hsl(var(--sunset-orange) / 0.8));
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* Tropical Shadows */
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-ocean: 0 10px 30px hsl(var(--ocean-blue) / 0.3);
+    --shadow-sunset: 0 10px 30px hsl(var(--sunset-orange) / 0.3);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +135,73 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effects */
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Tropical animations */
+  .fade-up {
+    animation: fadeUp 0.6s ease-out;
+  }
+  
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Typography */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-lg;
+    @apply hover:scale-105 active:scale-95;
+    @apply shadow-lg hover:shadow-xl;
+    transition: var(--transition-bounce);
+    background: var(--gradient-sunset);
+  }
+  
+  /* Glass card variant */
+  .card-glass {
+    @apply glass rounded-3xl p-6;
+    transition: var(--transition-smooth);
+  }
+  
+  .card-glass:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

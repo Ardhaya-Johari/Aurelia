@@ -57,6 +57,39 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Tropical theme colors
+        ocean: {
+          DEFAULT: "hsl(var(--ocean-blue))",
+          light: "hsl(var(--ocean-blue-light))",
+          dark: "hsl(var(--ocean-blue-dark))",
+        },
+        sunset: {
+          DEFAULT: "hsl(var(--sunset-orange))",
+          light: "hsl(var(--sunset-orange-light))",
+          dark: "hsl(var(--sunset-orange-dark))",
+        },
+        sand: {
+          DEFAULT: "hsl(var(--sand-beige))",
+          light: "hsl(var(--sand-beige-light))",
+          dark: "hsl(var(--sand-beige-dark))",
+        },
+      },
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-ocean': 'var(--gradient-ocean)',
+        'gradient-sunset': 'var(--gradient-sunset)',
+        'gradient-tropical': 'var(--gradient-tropical)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
+      boxShadow: {
+        'card': 'var(--shadow-card)',
+        'hover': 'var(--shadow-hover)',
+        'ocean': 'var(--shadow-ocean)',
+        'sunset': 'var(--shadow-sunset)',
+        'glass': 'var(--glass-shadow)',
       },
       borderRadius: {
         lg: "var(--radius)",
