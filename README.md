@@ -1,6 +1,8 @@
 <!-- Aurelia Banner -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Ardhaya-Johari/Aurelia/main/docs/aurelia-banner.png" alt="Aurelia Travel App Banner" width="100%" />
+  <p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=40&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=Aurelia;Tropical+Travel+Vibes" alt="Typing SVG" />
+</p>
 
   <!-- Badges -->
   
@@ -153,4 +155,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub](https://img.shields.io/badge/GitHub-Ardhaya--Johari-lightgrey?style=for-the-badge&logo=github)](https://github.com/Ardhaya-Johari)
 
 </div>
+
 
