@@ -56,7 +56,7 @@ const PopularDestinations = () => {
       id: '6',
       name: 'Seychelles',
       country: 'East Africa',
-      image: 'https://images.unsplash.com/photo-1587643985510-d4aab63fc4bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80',
+      image: 'https://travel.usnews.com/dims4/USNEWS/ca7467d/2147483647/resize/600x400%5E%3E/crop/600x400/quality/85/format/webp/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FAnse-Source-DArgent-GettyImages-Aleh-Varanishcha_jwBaGey.jpg',
       rating: 4.7,
       reviews: 967,
       description: 'Granite boulders, pristine beaches, and rare wildlife in this Eden-like archipelago.',
